@@ -1,0 +1,10 @@
+build/
+.idea/
+*.iml
+*.log
+*.tmp
+.gradle
+
+*.yml
+!application.yml
+
