@@ -2,10 +2,12 @@ package com.jpastudy.clonegram.domain.UserInfoManagement.service;
 
 import com.jpastudy.clonegram._core.errors.exception.Exception400;
 import com.jpastudy.clonegram.domain.UserInfoManagement.dao.Profile;
+import com.jpastudy.clonegram.domain.UserInfoManagement.dao.User;
 import com.jpastudy.clonegram.domain.UserInfoManagement.dto.UpdateUserProfileRequest;
 import com.jpastudy.clonegram.domain.UserInfoManagement.dto.GetUserProfileResponse;
 import com.jpastudy.clonegram.domain.UserInfoManagement.dto.UpdateUserProfileResponse;
 import com.jpastudy.clonegram.domain.UserInfoManagement.repository.ProfileRepository;
+import com.jpastudy.clonegram.domain.UserInfoManagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
     private final ProfileRepository profileRepository;
+    private final UserRepository userRepository;
+
     public GetUserProfileResponse getUserProfile(Long userId){
         Profile profile = profileRepository.findById(userId).orElseThrow(
                 () -> new Exception400("프로필을 찾을 수 없습니다")
@@ -40,5 +44,10 @@ public class UserService {
         profile.updateProfile(requestDTO.profileImg(), requestDTO.profileCtt());
 
         return UpdateUserProfileResponse.builder().message("프로필 업데이트를 완료하였습니다.").build();
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
     }
 }
