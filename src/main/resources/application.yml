@@ -4,6 +4,7 @@ spring:
       local:
         - common
         - local-db
+        - local-oauth
       dev:
         - common
         - dev-db
