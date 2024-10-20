@@ -3,7 +3,7 @@ package com.jpastudy.clonegram.domain.UserInfoManagement.dto;
 import lombok.Builder;
 
 @Builder
-public record GetUserProfileResponse(
+public record GetUserProfileResponseDto(
         Long userId,
         String profileImg,
         String profileCtt,

@@ -3,7 +3,7 @@ package com.jpastudy.clonegram.domain.UserInfoManagement.dto;
 import lombok.Builder;
 
 @Builder
-public record UpdateUserProfileResponse(
+public record UpdateUserProfileResponseDto(
         String message
 ) {
 }
