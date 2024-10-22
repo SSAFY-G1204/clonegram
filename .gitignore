@@ -5,6 +5,4 @@ build/
 *.tmp
 .gradle
 
-*.yml
-!application.yml
-
+application-local-*

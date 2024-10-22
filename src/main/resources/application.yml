@@ -8,4 +8,5 @@ spring:
       dev:
         - common
         - dev-db
+        - dev-oauth
     active: local

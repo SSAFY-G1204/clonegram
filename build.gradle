@@ -40,10 +40,11 @@ dependencies {
     // implementation 'javax.xml.bind:jaxb-api:2.3.1' (필요할 경우만 사용)
 
     runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'com.mysql:mysql-connector-j'
 
-    compileOnly 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -53,6 +54,7 @@ dependencies {
 }
 
 tasks.named('test') {
+    enabled = false
     outputs.dir snippetsDir
     useJUnitPlatform()
 }

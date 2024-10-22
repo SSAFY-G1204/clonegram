@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /api
+    encoding:
+      charset: utf-8
+      force: true
+  port: 8080
+jwt:
+  issuer: ashley0739@naver.com
+  secret_key : secret_keysecret_keysecret_keysecret_key

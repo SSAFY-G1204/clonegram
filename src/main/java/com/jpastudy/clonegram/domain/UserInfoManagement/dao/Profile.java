@@ -6,6 +6,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
+@Table(name = "profiles")
 public class Profile {
     @Id
     private Long userId;
